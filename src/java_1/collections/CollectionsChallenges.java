@@ -3,6 +3,7 @@ package java_1.collections;
 import java.util.*;
 
 public class CollectionsChallenges {
+	static int[] nums = new int[]{10,23,3,4,5,2,1};
 
 	public static void main(String[] args) {
 //		Complete the code challenges for the following static methods
@@ -10,17 +11,20 @@ public class CollectionsChallenges {
 
 	int findVal(int val, ArrayList<Integer> arrList) {
 //		find a value in the input array list.  return it if found.  If not, return 0.
+
+
 		return 0;
 	}
 
 	static List convertArrToList(Object[] array) {
 //		convert the array to a list and return it.
-		return null;
+		return Arrays.asList(array);
 	}
 
 	static Set<String> listToSet(List<String> states) {
 //		convert a list of US states to a set.  return the set.
-		return null;
+		Set<String> setOfStates = new HashSet<>(states);
+		return setOfStates;
 	}
 
 	static int addToList(int x, ArrayList<Integer> numList) {
@@ -50,7 +54,16 @@ public class CollectionsChallenges {
 /*		reverse the linked list.  If the mutate boolean is set to true, reverse a copy of the linked list without mutating the original list.  If mutate is false, reverse the original linkedList in place.
 		example : ["red","orange","yellow","green","blue","indigo","violet"] => reverseLinkedList => [violet, indigo, blue, green, yellow, orange, red]
  */
-		return linkedList;
+		if(mutate) {
+			LinkedList<String> listCopy = new LinkedList<String>();
+			listCopy = (LinkedList)linkedList.clone();
+			Collections.reverse(listCopy);
+			return listCopy;
+		}
+		else {
+			Collections.reverse(linkedList);
+			return linkedList;
+		}
 	}
 
 	static ArrayList<String> removeDuplicates(ArrayList<String> names) {

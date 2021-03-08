@@ -13,7 +13,7 @@ class Arrays {
     public static void main(String[] args) {
         System.out.println(java.util.Arrays.toString(bitsToBinaries()));
         printNums();
-        greet("Barry Allen");
+        greet("Wally West");
         System.out.println(keepColors());
     }
 

@@ -4,6 +4,11 @@ public class JavaChallenges {
 
 	public static void main(String[] args) {
 		//solve the code challenges found in the static methods on this class
+		printMsg("Hodor", 3);
+		System.out.println("$" + calcPay(40, 7.25, 52));
+		System.out.println(reverseString("Hodor"));
+		System.out.println(countQuarters(15080));
+		System.out.println((solveQuadratic(3,7,37)));
 	}
 
 	static void printMsg(String msg, int repeats) {
@@ -13,12 +18,19 @@ public class JavaChallenges {
 		hello world
 		hello world
 		 */
+
+
+		for (int i = 0; i < repeats; i++) {
+			System.out.println(msg);
+		}
 	}
 
 	static int nthFibonacci(int n) {
 		/*calculate the nth fibonacci number and return the value.  The first 4 fibonacci numbers are : 1, 1, 2, 3...  learn more : http://bit.ly/fibonacci-agile
 		example : nthFibonacci(7) => 13
 		 */
+
+
 		return 1;
 	}
 
@@ -28,23 +40,25 @@ public class JavaChallenges {
 		80 hours / period , $50.00 / hr, 8 periods => calcPay(80,25.00,8) => 16000.00
 		1 hr / period, $250.00 / hr, 2 periods => calcPay(1,250.00,2) => 500.00
  */
-		return 0.0d;
+		return hrsPerPeriod * hourlyRate * payPeriods;
 	}
 
 	static long solveQuadratic(int x, int y, int z) {
 		/* compute a quadratic equation using the input parameters.  Recall that a quadratic equation has the format :  x^2 + y + z */
-		return x;
+		return (long) (Math.pow(x, 2) + y + z);
 	}
 
-	static int countQuarters(double amount) {
+	static double countQuarters(double amount) {
 //		calculate the number of quarters that can be changed for the given amount.
 //		$10.50 => countQuarters(10.50) => 42
-		return 0;
+		return Math.round(amount / 0.25);
 	}
 
 	static String reverseString(String str) {
 		//reverse the input string and return it.
-		return str;
+
+
+		return new StringBuilder(str).reverse().toString();
 	}
 
 	static String shuffleMessage(String[] messages) {

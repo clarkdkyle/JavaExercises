@@ -50,7 +50,7 @@ class DataTypes {
 
 	static double dollarsToBitcoin(Object dollars) {
 		//	convert (usd) dollars $ to bitcoin using appropriate data types for the inputs and the outputs, As of 1/2021, 1 bitcoin ~=> $50000.00
-		return (double) (int) dollars / 47377;
+		return (double) (int) dollars / 50000;
 	}
 
 	static boolean canDrive(Object age) {
