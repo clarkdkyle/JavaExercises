@@ -13,7 +13,7 @@ public class CollectionsChallenges {
 //		find a value in the input array list.  return it if found.  If not, return 0.
 
 
-		return 0;
+		return arrList.get(val);
 	}
 
 	static List convertArrToList(Object[] array) {
@@ -29,11 +29,19 @@ public class CollectionsChallenges {
 
 	static int addToList(int x, ArrayList<Integer> numList) {
 		// add the x input to the array list.  return the value if succcessfully added.
-		return x;
+
+		if (numList.add(x)) {
+			return x;
+		} else {
+			return 0;
+		}
+
 	}
 
-	static void removeFromList(int x, ArrayList<Integer> numList) {
+	static ArrayList<Integer> removeFromList(int x, ArrayList<Integer> numList) {
 		// remove the input parameter value x from the numList.
+		numList.remove(x);
+		return numList;
 	}
 
 	static int insertIntoList(int x, int i, ArrayList<Integer> numList) {

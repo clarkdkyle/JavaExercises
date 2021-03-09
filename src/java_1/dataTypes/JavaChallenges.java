@@ -1,14 +1,23 @@
 package java_1.dataTypes;
 
+
+import java.util.Arrays;
+import java.util.Collections;
+
 public class JavaChallenges {
 
 	public static void main(String[] args) {
 		//solve the code challenges found in the static methods on this class
 		printMsg("Hodor", 3);
+		System.out.println(nthFibonacci(42));
 		System.out.println("$" + calcPay(40, 7.25, 52));
 		System.out.println(reverseString("Hodor"));
 		System.out.println(countQuarters(15080));
 		System.out.println((solveQuadratic(3,7,37)));
+		System.out.println(calcGPA(new int[]{77, 86, 42, 73}));
+		System.out.println( shuffleMessage(new String[]{"Smurf", "Smurfing", "Smurfed"}));
+		printEgg();
+		System.out.println(totaledReceipt(new Item[]{new Item( "pants" , 20.00) , new Item( "iPhone", 1100.00)}));
 	}
 
 	static void printMsg(String msg, int repeats) {
@@ -29,9 +38,15 @@ public class JavaChallenges {
 		/*calculate the nth fibonacci number and return the value.  The first 4 fibonacci numbers are : 1, 1, 2, 3...  learn more : http://bit.ly/fibonacci-agile
 		example : nthFibonacci(7) => 13
 		 */
+		if (n == 0) {
+			return 0;
+		}
+		if (n == 1) {
+			return 1;
+		}
 
+		return nthFibonacci(n-1) + nthFibonacci(n-2);
 
-		return 1;
 	}
 
 	static double calcPay(int hrsPerPeriod, double hourlyRate, int payPeriods) {
@@ -67,8 +82,11 @@ public class JavaChallenges {
 		["hi", "dear", "friend"] => shuffleMessage() => "dear hi friend";
 		["hi", "dear", "friend"] => shuffleMessage() => "friend dear hi";
 */
-		return null;
+
+		Collections.shuffle(Arrays.asList(messages));
+		return String.join(" ", messages);
 	}
+
 
 	static double calcGPA(int[] scores) {
 			/*calcGpa accepts an array of scores, representing a student's scores for a list of classes, and returns that student's
@@ -80,8 +98,27 @@ public class JavaChallenges {
 			80 - 89 - 3.0
 			90 - 100 - 4.0
 		 */
-		return 4.0;
+		double GPA = 0;
+
+		for (int score : scores) {
+			if (score > 0 || score < 100) {
+				if (score <= 59) {
+					GPA += 0.0;
+				} else if (score >= 60 && score <= 69) {
+					GPA += 1.0;
+				} else if (score >= 70 && score <= 79) {
+					GPA += 2.0;
+				} else if (score >= 80 && score <= 89) {
+					GPA += 3.0;
+				} else if (score >= 90 & score <= 100) {
+					GPA += 4.0;
+				}
+			}
+		}
+
+		return GPA / scores.length;
 	}
+
 
 	static void printEgg() {
 		/*printEgg() => displays the following output:
@@ -93,6 +130,15 @@ public class JavaChallenges {
 			 \_______/
 
 		*/
+
+		System.out.println("  _______");
+		System.out.println(" /       \\");
+		System.out.println("/         \\");
+		System.out.println("-\"-'-\"-'-\"-");
+		System.out.println("\\         /");
+		System.out.println(" \\_______/");
+
+
 	}
 
 	static class Item {
@@ -117,7 +163,15 @@ public class JavaChallenges {
 
 	//		Calculate the total amount of all items in the transactions array.  Note that each element of the transactions array is of type Item.
 	//		[Item{ item : "pants" , cost : 20.00} , Item{ item : "iPhone", cost : 1100.00} ] => totaledReceipt() => 1120.00
-			return 0.0;
+
+			double total = 0;
+
+			for (Item transaction : transactions) {
+				total += transaction.cost;
+			}
+
+
+			return total;
 
 		}
 	}
