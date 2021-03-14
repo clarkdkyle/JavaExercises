@@ -13,5 +13,17 @@ public class BankingApp {
 				-find an account by any of the customer credentials
 				-find an account by account number.
 		 	*/
+//		Account cust1 = new Account ();
+//		cust1.deposit(500);
+//
+//		Account cust2 = new Account();
+//		cust2.deposit(100);
+//		cust2.withdraw(300);
+//
+//
+//		System.out.println(cust1.getBalance());
+//		System.out.println(cust2.getBalance());
+//
+
 	}
 }

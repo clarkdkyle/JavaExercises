@@ -19,7 +19,8 @@ public class CollectionsChallenges {
         System.out.println(insertIntoList(7, 0, numList));
         System.out.println(reverseNums(numList));
         System.out.println(reverseLinkedList(linkedList, true));
-	    System.out.println(removeDuplicates(names));
+        System.out.println(reverseLinkedList(linkedList, false));
+        System.out.println(removeDuplicates(names));
 	}
 
 	static int findVal(int val, ArrayList<Integer> arrList) {
@@ -86,7 +87,6 @@ public class CollectionsChallenges {
 			return listCopy;
 		}
 		else {
-			Collections.reverse(linkedList);
 			return linkedList;
 		}
 	}

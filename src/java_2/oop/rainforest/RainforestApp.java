@@ -1,5 +1,6 @@
 package java_2.oop.rainforest;
 
+
 public class RainforestApp {
 
 	public static void main(String[] args) {
@@ -17,6 +18,24 @@ public class RainforestApp {
 		choose your own characteristics and methods to model).
 
 */
+
+		RainforestCreature spectacledOwl = new RainforestCreature("Spectacled Owl", "gray with white around the eyes", new String[]{"rodents", "Sloths"});
+		spectacledOwl.prey();
+
+		RainforestCreature tocoToucan = new RainforestCreature("Toco Toucan", "black and white with yellow beaks", new String[]{"fruit", "reptlies","small birds", "eggs" });
+		tocoToucan.prey();
+
+		RainforestCreature riverDolphin = new RainforestCreature("riverDolphin","pink",new String[]{"fish","crabs","turtles"});
+		riverDolphin.prey();
+
+		RainforestCreature poisonDartFrog = new RainforestCreature("Poison Dart Frog", "blue and yellow", new String[]{"small insects"});
+		poisonDartFrog.prey();
+
+		RainforestCreature riverTurtle = new RainforestCreature("River Turtle", "green", new String[]{"Plants", "Dead Fish" });
+		riverTurtle.prey();
+
+		RainforestCreature pygmyMarmoset = new RainforestCreature("Pygmy Marmoset", "brown", new String[]{"insects", "fruit", "tree sap" });
+		pygmyMarmoset.prey();
 	}
 
 }

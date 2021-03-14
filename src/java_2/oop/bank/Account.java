@@ -1,6 +1,6 @@
 package java_2.oop.bank;
 
-public class Account {
+public abstract class Account {
 
 	/*
 		Properties:
@@ -18,6 +18,45 @@ public class Account {
 
 	 */
 
+    private double balance;
+
+    private int accountNumber;
 
 
+    //Default constructor
+    public Account() {
+    }
+
+    public Account(int accountNumber) {
+        this.accountNumber = accountNumber;
+        balance = 0;
+    }
+
+    public void deposit(double amount) {
+        balance = balance + amount;
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance = balance - amount;
+        } else {
+            System.err.println("Insufficient funds...");
+        }
+    }
 }
+// getter methods
+//        public double getBalance() {
+//            return this.balance;
+//    }
+//
+//    public int getAccountNumber() {
+//            return this.accountNumber;
+//    };
+
+//    public abstract void deposit(double amount);
+//
+//
+//
+//    public abstract void withdraw(double amount);
+//
+//}
