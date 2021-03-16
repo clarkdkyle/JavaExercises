@@ -12,4 +12,19 @@ public class Bank {
 	 		getAccountByCustomer(Customer);
 	 		getAccountByNumber(acctNum);
 	 */
+    Customer customer;
+
+    public Customer getAccountByCustomer(String getName) {
+        System.out.println(getName);
+        return customer;
+    }
+
+    public String getAccountByNumber(String accountNumber) {
+        System.out.println(accountNumber);
+        return accountNumber;
+    }
+
+
+
+
 }

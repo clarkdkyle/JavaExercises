@@ -1,6 +1,8 @@
 package java_2.oop.bank;
 
-public abstract class Account {
+import java.util.List;
+
+public class Account {
 
 	/*
 		Properties:
@@ -18,45 +20,59 @@ public abstract class Account {
 
 	 */
 
-    private double balance;
-
-    private int accountNumber;
+    String bank, accountNumber;
+    Customer accountHolder;
+    double balance;
+    String typeofAccount;
+    List<String> transactions;
 
 
     //Default constructor
-    public Account() {
-    }
 
-    public Account(int accountNumber) {
+    public Account(String Bank, String accountNumber, Customer accountHolder, double balance, String typeOfAccount, List transactions) {
+        this.bank = bank;
         this.accountNumber = accountNumber;
-        balance = 0;
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+        this.typeofAccount = typeofAccount;
+        this.transactions = transactions;
     }
 
     public void deposit(double amount) {
-        balance = balance + amount;
+        this.balance = balance + amount;
+       this.accountHolder.wallet = amount;
+        System.out.println("Depositing" + amount + "into account" + accountNumber );
+        System.out.println("Your new balance is: " + balance );
+        System.out.println("You have " + this.accountHolder.wallet + "in your wallet");
     }
 
     public void withdraw(double amount) {
-        if (amount <= balance) {
-            balance = balance - amount;
+        if (amount <= this.balance) {
+            this.balance -= amount;
+            this.accountHolder.wallet += amount;
+            System.out.println("withdrawing" + amount + "from account" + accountNumber);
+            System.out.println("Your new balance is: " + balance);
+            System.out.println("You have " + this.accountHolder.wallet + "in your wallet");
+
+
         } else {
             System.err.println("Insufficient funds...");
         }
     }
-}
-// getter methods
-//        public double getBalance() {
-//            return this.balance;
-//    }
-//
-//    public int getAccountNumber() {
-//            return this.accountNumber;
-//    };
 
-//    public abstract void deposit(double amount);
-//
-//
-//
-//    public abstract void withdraw(double amount);
-//
-//}
+        @Override
+        public String toString() {
+            return "Account{" +
+                    "bank='" + bank + '\'' +
+                    ", accountNumber='" + accountNumber + '\'' +
+                    ", type='" + typeofAccount + '\'' +
+                    ", accountHolder=" + accountHolder +
+                    ", balance=" + balance +
+                    ", transactions=" + transactions +
+                    '}';
+        }
+
+    }
+
+
+

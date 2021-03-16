@@ -1,5 +1,7 @@
 package java_2.oop.podcast;
 
+import java.util.List;
+
 class PodcastingApp {
 
 /*
@@ -18,6 +20,16 @@ class PodcastingApp {
        - showPlaylist()
        - removeFromPlaylist(Podcast)
 */
+    String appName;
+    List<Podcast> playlist;
 
+
+    public PodcastingApp(String appName, List<Podcast> playlist) {
+        this.appName = appName;
+        this.playlist= playlist;
+
+
+
+    }
 }
 
